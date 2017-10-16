@@ -17,21 +17,22 @@ type Items struct {
 
 // Item represents item
 type Item struct {
-	XMLName         xml.Name `xml:"Item"`
-	ASIN            string
-	DetailPageURL   string
-	SalesRank       int
-	ItemLinks       ItemLinks
-	SmallImage      Image
-	MediumImage     Image
-	LargeImage      Image
-	ImageSets       ImageSets
-	ItemAttributes  ItemAttributes
-	OfferSummary    OfferSummary
-	Offers          Offers
-	CustomerReviews CustomerReviews
-	SimilarProducts SimilarProducts
-	BrowseNodes     BrowseNodes
+	XMLName          xml.Name `xml:"Item"`
+	ASIN             string
+	DetailPageURL    string
+	SalesRank        int
+	ItemLinks        ItemLinks
+	SmallImage       Image
+	MediumImage      Image
+	LargeImage       Image
+	ImageSets        ImageSets
+	ItemAttributes   ItemAttributes
+	OfferSummary     OfferSummary
+	Offers           Offers
+	CustomerReviews  CustomerReviews
+	SimilarProducts  SimilarProducts
+	EditorialReviews EditorialReviews
+	BrowseNodes      BrowseNodes
 }
 
 // ItemLinks represents ItemLinks
@@ -72,6 +73,15 @@ type ImageSet struct {
 	TinyImage      Image
 	MediumImage    Image
 	LargeImage     Image
+}
+
+type EditorialReviews struct {
+	EditorialReview []EditorialReview
+}
+
+type EditorialReview struct {
+	Source  string
+	Content string
 }
 
 // Date represents short form date with yyyy-mm-dd date format
@@ -131,6 +141,7 @@ type ItemAttributes struct {
 	Studio            string
 	Title             string
 	NumberOfDiscs     []int
+	Feature           []string
 }
 
 // Creator represents Creator
