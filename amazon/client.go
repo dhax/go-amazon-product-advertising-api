@@ -71,8 +71,8 @@ func New(accessKeyID string, secretAccessKey string, associateTag string, region
 	}, nil
 }
 
-// NewFromEnvionment returns new client from environment variables
-func NewFromEnvionment() (*Client, error) {
+// NewFromEnvironment returns new client from environment variables
+func NewFromEnvironment() (*Client, error) {
 	return New(
 		os.Getenv("AWS_ACCESS_KEY_ID"),
 		os.Getenv("AWS_SECRET_ACCESS_KEY"),

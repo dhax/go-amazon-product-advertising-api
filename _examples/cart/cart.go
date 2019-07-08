@@ -5,11 +5,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/ngs/go-amazon-product-advertising-api/amazon"
+	"github.com/jami/go-amazon-product-advertising-api/amazon"
 )
 
 func main() {
-	client, err := amazon.NewFromEnvionment()
+	client, err := amazon.NewFromEnvironment()
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -134,6 +134,7 @@ type ItemAttributes struct {
 	Languages         Languages
 	ListPrice         Price
 	Manufacturer      string
+	MPN               string
 	NumberOfItems     int
 	NumberOfPages     int
 	PackageDimensions PackageDimensions

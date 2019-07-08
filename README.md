@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-	client, err := amazon.NewFromEnvionment()
+	client, err := amazon.NewFromEnvironment()
 	if err != nil {
 		log.Fatal(err)
 	}
