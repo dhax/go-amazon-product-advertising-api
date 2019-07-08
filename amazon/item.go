@@ -34,6 +34,7 @@ type Item struct {
 	CustomerReviews  CustomerReviews
 	SimilarProducts  SimilarProducts
 	BrowseNodes      BrowseNodes
+	Variations       Variations
 }
 
 // ItemLinks represents ItemLinks
@@ -188,6 +189,13 @@ type PackageDimensions struct {
 	Width  Size
 }
 
+// Variations represents Variations
+type Variations struct {
+	TotalVariations     int
+	TotalVariationPages int
+	Item                []Item
+}
+
 // OfferSummary represents OfferSummary
 type OfferSummary struct {
 	LowestNewPrice   Price
@@ -228,6 +236,7 @@ type OfferAttributes struct {
 type OfferListing struct {
 	ID                              string `xml:"OfferListingId"`
 	Price                           Price
+	SalePrice                       Price
 	Availability                    string
 	AvailabilityAttributes          AvailabilityAttributes
 	IsEligibleForSuperSaverShipping bool
