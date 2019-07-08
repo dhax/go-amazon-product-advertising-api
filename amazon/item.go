@@ -119,6 +119,7 @@ type ItemAttributes struct {
 	AspectRatio       string
 	AudienceRating    string
 	Binding           string
+	Brand             string
 	Creator           Creator
 	EAN               string
 	EANList           EANList
@@ -131,6 +132,7 @@ type ItemAttributes struct {
 	Languages         Languages
 	ListPrice         Price
 	Manufacturer      string
+	NumberOfItems     int
 	NumberOfPages     int
 	PackageDimensions PackageDimensions
 	ProductGroup      string
@@ -141,6 +143,7 @@ type ItemAttributes struct {
 	UPC               string
 	UPCList           UPCList
 	Publisher         string
+	Size              string
 	Studio            string
 	Title             string
 	NumberOfDiscs     []int
