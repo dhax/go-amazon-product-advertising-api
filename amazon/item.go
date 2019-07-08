@@ -17,21 +17,22 @@ type Items struct {
 
 // Item represents item
 type Item struct {
-	XMLName         xml.Name `xml:"Item"`
-	ASIN            string
-	DetailPageURL   string
-	SalesRank       int
-	ItemLinks       ItemLinks
-	SmallImage      Image
-	MediumImage     Image
-	LargeImage      Image
-	ImageSets       ImageSets
-	ItemAttributes  ItemAttributes
-	OfferSummary    OfferSummary
-	Offers          Offers
-	CustomerReviews CustomerReviews
-	SimilarProducts SimilarProducts
-	BrowseNodes     BrowseNodes
+	XMLName          xml.Name `xml:"Item"`
+	ASIN             string
+	DetailPageURL    string
+	SalesRank        int
+	ItemLinks        ItemLinks
+	SmallImage       Image
+	MediumImage      Image
+	LargeImage       Image
+	ImageSets        ImageSets
+	ItemAttributes   ItemAttributes
+	EditorialReviews EditorialReviews
+	OfferSummary     OfferSummary
+	Offers           Offers
+	CustomerReviews  CustomerReviews
+	SimilarProducts  SimilarProducts
+	BrowseNodes      BrowseNodes
 }
 
 // ItemLinks represents ItemLinks
@@ -50,6 +51,17 @@ type Image struct {
 	URL    string
 	Height Size
 	Width  Size
+}
+
+// EditorialReviews response group
+type EditorialReviews struct {
+	EditorialReview EditorialReview
+}
+
+// EditorialReview response attribute
+type EditorialReview struct {
+	Source  string
+	Content string
 }
 
 // Size represents Size
@@ -112,6 +124,7 @@ type ItemAttributes struct {
 	EANList           EANList
 	CatalogNumberList CatalogNumberList
 	Format            []string
+	Feature           []string
 	IsAdultProduct    bool
 	ISBN              string
 	Label             string
