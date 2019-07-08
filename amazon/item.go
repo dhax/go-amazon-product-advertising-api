@@ -18,6 +18,7 @@ type Items struct {
 // Item represents item
 type Item struct {
 	XMLName          xml.Name `xml:"Item"`
+	ParentASIN       string
 	ASIN             string
 	DetailPageURL    string
 	SalesRank        int
