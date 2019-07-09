@@ -123,6 +123,7 @@ type ItemAttributes struct {
 	Binding           string
 	Brand             string
 	Creator           Creator
+	Color             string
 	EAN               string
 	EANList           EANList
 	CatalogNumberList CatalogNumberList
