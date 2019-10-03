@@ -51,6 +51,8 @@ const (
 	ItemLookupResponseGroupVariations ItemLookupResponseGroup = "Variations"
 	// ItemLookupResponseGroupVariationSummary is a constant for VariationSummary response group
 	ItemLookupResponseGroupVariationSummary ItemLookupResponseGroup = "VariationSummary"
+	// ItemLookupResponseGroupVariationOffers is a constant for VariationOffers response group
+	ItemLookupResponseGroupVariationOffers ItemLookupResponseGroup = "VariationOffers"
 )
 
 // ItemLookupParameters represents parameters for ItemLookup operation request

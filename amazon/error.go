@@ -111,7 +111,7 @@ func (e Errors) Error() string {
 // ErrorResponse represents error response from the API
 type ErrorResponse interface {
 	error
-	Code() string
+	Code() ErrorCode
 	Message() string
 }
 

@@ -18,6 +18,7 @@ type Items struct {
 // Item represents item
 type Item struct {
 	XMLName          xml.Name `xml:"Item"`
+	ParentASIN       string
 	ASIN             string
 	DetailPageURL    string
 	SalesRank        int
@@ -27,12 +28,13 @@ type Item struct {
 	LargeImage       Image
 	ImageSets        ImageSets
 	ItemAttributes   ItemAttributes
+	EditorialReviews EditorialReviews
 	OfferSummary     OfferSummary
 	Offers           Offers
 	CustomerReviews  CustomerReviews
 	SimilarProducts  SimilarProducts
-	EditorialReviews EditorialReviews
 	BrowseNodes      BrowseNodes
+	Variations       Variations
 }
 
 // ItemLinks represents ItemLinks
@@ -51,6 +53,17 @@ type Image struct {
 	URL    string
 	Height Size
 	Width  Size
+}
+
+// EditorialReviews response group
+type EditorialReviews struct {
+	EditorialReview EditorialReview
+}
+
+// EditorialReview response attribute
+type EditorialReview struct {
+	Source  string
+	Content string
 }
 
 // Size represents Size
@@ -73,15 +86,6 @@ type ImageSet struct {
 	TinyImage      Image
 	MediumImage    Image
 	LargeImage     Image
-}
-
-type EditorialReviews struct {
-	EditorialReview []EditorialReview
-}
-
-type EditorialReview struct {
-	Source  string
-	Content string
 }
 
 // Date represents short form date with yyyy-mm-dd date format
@@ -117,17 +121,22 @@ type ItemAttributes struct {
 	AspectRatio       string
 	AudienceRating    string
 	Binding           string
+	Brand             string
 	Creator           Creator
+	Color             string
 	EAN               string
 	EANList           EANList
 	CatalogNumberList CatalogNumberList
 	Format            []string
+	Feature           []string
 	IsAdultProduct    bool
 	ISBN              string
 	Label             string
 	Languages         Languages
 	ListPrice         Price
 	Manufacturer      string
+	MPN               string
+	NumberOfItems     int
 	NumberOfPages     int
 	PackageDimensions PackageDimensions
 	ProductGroup      string
@@ -138,10 +147,10 @@ type ItemAttributes struct {
 	UPC               string
 	UPCList           UPCList
 	Publisher         string
+	Size              string
 	Studio            string
 	Title             string
 	NumberOfDiscs     []int
-	Feature           []string
 }
 
 // Creator represents Creator
@@ -180,6 +189,13 @@ type PackageDimensions struct {
 	Length Size
 	Weight Size
 	Width  Size
+}
+
+// Variations represents Variations
+type Variations struct {
+	TotalVariations     int
+	TotalVariationPages int
+	Item                []Item
 }
 
 // OfferSummary represents OfferSummary
@@ -222,6 +238,7 @@ type OfferAttributes struct {
 type OfferListing struct {
 	ID                              string `xml:"OfferListingId"`
 	Price                           Price
+	SalePrice                       Price
 	Availability                    string
 	AvailabilityAttributes          AvailabilityAttributes
 	IsEligibleForSuperSaverShipping bool

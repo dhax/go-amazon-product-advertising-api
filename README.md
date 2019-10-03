@@ -1,6 +1,11 @@
 go-amazon-product-advertising-api
 =================================
 
+This is a fork of ngs/go-amazon-product-advertising-api
+Since a year or so ngs did not accept or merge any pull requests. So this is a fork which merges all the open pull requests. Because some of them are critical and mandatory!!
+
+12.08.19 - Can't get any contact to ngs. Please find a new maintainer!
+
 [![Build Status](https://travis-ci.org/ngs/go-amazon-product-advertising-api.svg?branch=master)](https://travis-ci.org/ngs/go-amazon-product-advertising-api)
 [![GoDoc](https://godoc.org/github.com/ngs/go-amazon-product-advertising-api/amazon?status.svg)](https://godoc.org/github.com/ngs/go-amazon-product-advertising-api/amazon)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ngs/go-amazon-product-advertising-api)](https://goreportcard.com/report/github.com/ngs/go-amazon-product-advertising-api)
@@ -26,7 +31,7 @@ import (
 )
 
 func main() {
-	client, err := amazon.NewFromEnvionment()
+	client, err := amazon.NewFromEnvironment()
 	if err != nil {
 		log.Fatal(err)
 	}

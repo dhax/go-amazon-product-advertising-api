@@ -87,12 +87,12 @@ func TestNewEmptySecretAccessKey(t *testing.T) {
 	}
 }
 
-func TestNewFromEnvionment(t *testing.T) {
+func TestNewFromEnvironment(t *testing.T) {
 	os.Setenv("AWS_ACCESS_KEY_ID", "AK")
 	os.Setenv("AWS_SECRET_ACCESS_KEY", "SK")
 	os.Setenv("AWS_PRODUCT_REGION", "JP")
 	os.Setenv("AWS_ASSOCIATE_TAG", "ngsio-22")
-	client, _ := NewFromEnvionment()
+	client, _ := NewFromEnvironment()
 	for _, test := range []Test{
 		{"AK", client.AccessKeyID},
 		{"SK", client.SecretAccessKey},
